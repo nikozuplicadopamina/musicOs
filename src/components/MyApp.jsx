@@ -102,27 +102,30 @@ export default function MyApp({ maximized }) {
 
         <div className="myapp-right">
           <div className="myapp-card">
+            <div className="myapp-card-img">img</div>
             <div className="myapp-card-text">
               <h3 className="myapp-card-title">nombre1</h3>
+              <p className="myapp-card-artist">artista(s)</p>
               <p className="myapp-card-desc">Descripcion corta de este album o artista.</p>
             </div>
-            <div className="myapp-card-img">img</div>
           </div>
 
           <div className="myapp-card">
+            <div className="myapp-card-img">img</div>
             <div className="myapp-card-text">
               <h3 className="myapp-card-title">nombre2</h3>
+              <p className="myapp-card-artist">artista(s)</p>
               <p className="myapp-card-desc">Otra descripcion corta para este segundo item.</p>
             </div>
-            <div className="myapp-card-img">img</div>
           </div>
 
           <div className="myapp-card">
+            <div className="myapp-card-img">img</div>
             <div className="myapp-card-text">
               <h3 className="myapp-card-title">nombre3</h3>
+              <p className="myapp-card-artist">artista(s)</p>
               <p className="myapp-card-desc">Y una ultima descripcion para completar la fila.</p>
             </div>
-            <div className="myapp-card-img">img</div>
           </div>
         </div>
       </div>

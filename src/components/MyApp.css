@@ -81,11 +81,20 @@
 }
 
 .myapp-card-title {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #1e4d8c;
+}
+
+.myapp-card-artist {
+  margin: 0 0 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #888888;
+  font-style: italic;
 }
 
 .myapp-card-desc {
@@ -148,8 +157,13 @@
 }
 
 .pixel-page.maximized .myapp-card-title {
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   font-size: 20px;
+}
+
+.pixel-page.maximized .myapp-card-artist {
+  margin-bottom: 8px;
+  font-size: 15px;
 }
 
 .pixel-page.maximized .myapp-card-desc {

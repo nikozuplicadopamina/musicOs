@@ -8,7 +8,7 @@ const FONT_WEIGHT = 700
 const RESOLUTION = 46
 const SQUEEZE = 0.5
 const TRACKING = '-1px'
-const OUTLINE = 2
+const OUTLINE = 1
 const GRADIENT_MUSIC = ['#ffffff', '#b8b0a4']
 const GRADIENT_OS = ['#5b9bd5', '#1e4d8c']
 

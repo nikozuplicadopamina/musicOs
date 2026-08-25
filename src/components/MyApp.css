@@ -1,18 +1,13 @@
 .pixel-page {
   --paper: #0c0d12;
-  --paper-grid: rgba(255, 255, 255, 0.045);
 
   height: 100%;
   overflow: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: clamp(24px, 5vw, 48px) 16px;
   background-color: var(--paper);
-  background-image:
-    linear-gradient(to right, var(--paper-grid) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--paper-grid) 1px, transparent 1px);
-  background-size: 24px 24px;
   color: #e8eaf0;
 }
 
@@ -22,12 +17,12 @@
   max-width: 60rem;
   flex-direction: column;
   align-items: center;
-  gap: 22px;
+  gap: 18px;
 }
 
 .pixel-title {
   display: block;
-  width: 100%;
+  width: min(100%, 520px);
   height: auto;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
@@ -36,27 +31,28 @@
 
 .my-app-subtitle {
   margin: 0;
-  font-family: 'Press Start 2P', 'Courier New', monospace;
-  font-size: clamp(8px, 1.6vw, 12px);
-  letter-spacing: 4px;
-  color: #ffffff;
-  background: #000080;
-  padding: 10px 16px;
-  box-shadow: inset -2px -2px #000000, inset 2px 2px #4a4ae0;
+  font-family: 'Times New Roman', Times, Tinos, serif;
+  font-weight: 700;
+  font-size: clamp(13px, 2.4vw, 20px);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  background: linear-gradient(#f6d365, #c8442a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(1px 1px 0 #000000);
 }
 
 .my-app-content {
   width: min(720px, 100%);
   min-height: 200px;
-  flex: 1;
-  background: #ffffff;
-  border: 2px solid;
-  border-color: #808080 #dfdfdf #dfdfdf #808080;
-  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+  background: #131420;
+  border: 2px solid #2a2c3a;
+  box-shadow: inset 0 0 0 1px #000000;
   padding: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  color: #111111;
+  color: #e8eaf0;
 }

@@ -1,0 +1,45 @@
+.my-app {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 48px 24px;
+  background: #ffffff;
+  color: #111111;
+  text-align: center;
+}
+
+.my-app-title {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: clamp(26px, 6vw, 54px);
+  letter-spacing: 2px;
+  color: #000080;
+  text-shadow: 4px 4px 0 #1084d0;
+}
+
+.my-app-subtitle {
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: clamp(8px, 1.6vw, 12px);
+  letter-spacing: 4px;
+  color: #ffffff;
+  background: #000080;
+  padding: 10px 16px;
+  box-shadow: inset -2px -2px #000000, inset 2px 2px #4a4ae0;
+}
+
+.my-app-content {
+  width: min(720px, 100%);
+  min-height: 200px;
+  flex: 1;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

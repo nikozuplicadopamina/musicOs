@@ -2,13 +2,15 @@ import { useEffect, useRef } from 'react'
 import './MyApp.css'
 
 const TEXT = 'MusicOs'
+const SPLIT = 5
 const FONT_STACK = '"Times New Roman", Times, Tinos, serif'
 const FONT_WEIGHT = 700
 const RESOLUTION = 46
 const SQUEEZE = 0.5
 const TRACKING = '-1px'
 const OUTLINE = 2
-const GRADIENT = ['#f6d365', '#c8442a']
+const GRADIENT_MUSIC = ['#ffffff', '#b8b0a4']
+const GRADIENT_OS = ['#5b9bd5', '#1e4d8c']
 
 export default function MyApp() {
   const canvasRef = useRef(null)
@@ -39,6 +41,9 @@ export default function MyApp() {
       canvas.height = ascent + descent + pad * 2
       setFont()
 
+      const m1 = ctx.measureText(TEXT.slice(0, SPLIT))
+      const splitX = pad + m1.width * SQUEEZE
+
       const stamp = (dx, dy, style) => {
         ctx.setTransform(SQUEEZE, 0, 0, 1, pad + dx, pad + ascent + dy)
         ctx.fillStyle = style
@@ -53,14 +58,30 @@ export default function MyApp() {
         }
       }
 
-      ctx.setTransform(SQUEEZE, 0, 0, 1, pad, pad + ascent)
-      const g = ctx.createLinearGradient(0, -ascent, 0, 0)
-      GRADIENT.forEach((stop, i) => {
-        g.addColorStop(GRADIENT.length === 1 ? 0 : i / (GRADIENT.length - 1), stop)
-      })
-      stamp(0, 0, g)
-      ctx.setTransform(1, 0, 0, 1, 0, 0)
+      const makeGradient = (stops) => {
+        ctx.setTransform(SQUEEZE, 0, 0, 1, pad, pad + ascent)
+        const g = ctx.createLinearGradient(0, -ascent, 0, 0)
+        stops.forEach((stop, i) => {
+          g.addColorStop(stops.length === 1 ? 0 : i / (stops.length - 1), stop)
+        })
+        return g
+      }
 
+      ctx.save()
+      ctx.beginPath()
+      ctx.rect(0, 0, splitX, canvas.height)
+      ctx.clip()
+      stamp(0, 0, makeGradient(GRADIENT_MUSIC))
+      ctx.restore()
+
+      ctx.save()
+      ctx.beginPath()
+      ctx.rect(splitX, 0, canvas.width - splitX, canvas.height)
+      ctx.clip()
+      stamp(0, 0, makeGradient(GRADIENT_OS))
+      ctx.restore()
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0)
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height)
       const data = img.data
       for (let i = 3; i < data.length; i += 4) {

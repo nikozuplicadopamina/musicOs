@@ -8,7 +8,6 @@ const FONT_WEIGHT = 700
 const RESOLUTION = 46
 const SQUEEZE = 0.5
 const TRACKING = '-1px'
-const OUTLINE = 1
 const GRADIENT_MUSIC = ['#ffffff', '#b8b0a4']
 const GRADIENT_OS = ['#5b9bd5', '#1e4d8c']
 
@@ -26,7 +25,7 @@ export default function MyApp() {
       const ctx = canvas.getContext('2d')
       if (!ctx) return
 
-      const pad = Math.ceil(OUTLINE + 1)
+      const pad = 2
       const setFont = () => {
         ctx.font = font
         ctx.textBaseline = 'alphabetic'
@@ -41,7 +40,9 @@ export default function MyApp() {
       canvas.height = ascent + descent + pad * 2
       setFont()
 
-      const m1 = ctx.measureText(TEXT.slice(0, SPLIT))
+      const TEXT1 = TEXT.slice(0, SPLIT)
+      const TEXT2 = TEXT.slice(SPLIT)
+      const m1 = ctx.measureText(TEXT1)
       const splitX = pad + m1.width * SQUEEZE
 
       const stamp = (dx, dy, style) => {
@@ -50,36 +51,23 @@ export default function MyApp() {
         ctx.fillText(TEXT, 0, 0)
       }
 
-      for (let dy = -OUTLINE; dy <= OUTLINE; dy++) {
-        for (let dx = -OUTLINE; dx <= OUTLINE; dx++) {
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
           if (dx === 0 && dy === 0) continue
-          if (dx * dx + dy * dy > OUTLINE * OUTLINE + 1) continue
-          stamp(dx, dy, '#000000')
+          stamp(dx, dy, 'rgba(0,0,0,0.4)')
         }
       }
 
-      const makeGradient = (stops) => {
-        ctx.setTransform(SQUEEZE, 0, 0, 1, pad, pad + ascent)
+      const drawPart = (text, x, stops) => {
+        ctx.setTransform(SQUEEZE, 0, 0, 1, x, pad + ascent)
         const g = ctx.createLinearGradient(0, -ascent, 0, 0)
-        stops.forEach((stop, i) => {
-          g.addColorStop(stops.length === 1 ? 0 : i / (stops.length - 1), stop)
-        })
-        return g
+        stops.forEach((c, i) => g.addColorStop(i / (stops.length - 1), c))
+        ctx.fillStyle = g
+        ctx.fillText(text, 0, 0)
       }
 
-      ctx.save()
-      ctx.beginPath()
-      ctx.rect(0, 0, splitX, canvas.height)
-      ctx.clip()
-      stamp(0, 0, makeGradient(GRADIENT_MUSIC))
-      ctx.restore()
-
-      ctx.save()
-      ctx.beginPath()
-      ctx.rect(splitX, 0, canvas.width - splitX, canvas.height)
-      ctx.clip()
-      stamp(0, 0, makeGradient(GRADIENT_OS))
-      ctx.restore()
+      drawPart(TEXT1, pad, GRADIENT_MUSIC)
+      drawPart(TEXT2, splitX, GRADIENT_OS)
 
       ctx.setTransform(1, 0, 0, 1, 0, 0)
       const img = ctx.getImageData(0, 0, canvas.width, canvas.height)

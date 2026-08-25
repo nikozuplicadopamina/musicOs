@@ -31,4 +31,4 @@ Para añadir más apps al escritorio, agrega entradas al arreglo `APPS` en `src/
 
 ---
 
-Basado en [wins95Portfolio](https://github.com/Yuteoctober/wins95Portfolio) de Yuteoctober.
+Basado en [wins95Portfolio](https://github.com/Yuteoctober/wins95Portfolio) de Yuteoctober

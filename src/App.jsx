@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import DesktopIcon from './components/DesktopIcon.jsx'
 import Window from './components/Window.jsx'
 import MyApp from './components/MyApp.jsx'
+import MyFolder from './components/MyFolder.jsx'
 import icon from './assets/icon.png'
+import folderIcon from './assets/folder.png'
 import './App.css'
 
 const APPS = [
@@ -13,6 +15,14 @@ const APPS = [
     width: 720,
     height: 480,
     component: <MyApp />,
+  },
+  {
+    id: 'myfolder',
+    title: 'Mi carpeta',
+    icon: folderIcon,
+    width: 520,
+    height: 380,
+    component: <MyFolder />,
   },
 ]
 

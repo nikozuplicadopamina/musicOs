@@ -1,7 +1,8 @@
 import React from 'react'
 import Draggable from 'react-draggable'
 
-export default function Window({ win, app, focused, onFocus, onClose, onMinimize, onMaximize }) {
+export default function Window({ win, app, minimized, focused, onFocus, onClose, onMinimize, onMaximize }) {
+  const hiddenStyle = { display: minimized ? 'none' : undefined }
   const titlebar = (
     <div className={`titlebar${focused ? '' : ' inactive'}`}>
       <img src={app.icon} alt="" />
@@ -41,7 +42,7 @@ export default function Window({ win, app, focused, onFocus, onClose, onMinimize
     return (
       <section
         className="window maximized"
-        style={{ zIndex: win.z }}
+        style={{ zIndex: win.z, ...hiddenStyle }}
         onMouseDown={onFocus}
       >
         {titlebar}
@@ -59,7 +60,7 @@ export default function Window({ win, app, focused, onFocus, onClose, onMinimize
     >
       <section
         className="window"
-        style={{ zIndex: win.z, width: app.width, height: app.height }}
+        style={{ zIndex: win.z, width: app.width, height: app.height, ...hiddenStyle }}
         onMouseDown={onFocus}
       >
         {titlebar}

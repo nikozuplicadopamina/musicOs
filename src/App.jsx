@@ -125,17 +125,17 @@ export default function App() {
       {windows.map((win) => {
         const app = APPS.find((a) => a.id === win.id)
         return (
-          <div key={win.id} style={{ display: win.minimized ? 'none' : 'contents' }}>
-            <Window
-              win={win}
-              app={app}
-              focused={focusedId === win.id}
-              onFocus={() => focusWindow(win.id)}
-              onClose={() => closeWindow(win.id)}
-              onMinimize={() => toggleMinimize(win.id)}
-              onMaximize={() => toggleMaximize(win.id)}
-            />
-          </div>
+          <Window
+            key={win.id}
+            win={win}
+            app={app}
+            minimized={win.minimized}
+            focused={focusedId === win.id}
+            onFocus={() => focusWindow(win.id)}
+            onClose={() => closeWindow(win.id)}
+            onMinimize={() => toggleMinimize(win.id)}
+            onMaximize={() => toggleMaximize(win.id)}
+          />
         )
       })}
 

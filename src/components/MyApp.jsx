@@ -16,7 +16,6 @@ export default function MyApp() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
     let cancelled = false
     const font = `${FONT_WEIGHT} ${RESOLUTION}px ${FONT_STACK}`
 
@@ -26,7 +25,6 @@ export default function MyApp() {
       if (!ctx) return
 
       const pad = Math.ceil(OUTLINE + 1)
-
       const setFont = () => {
         ctx.font = font
         ctx.textBaseline = 'alphabetic'
@@ -77,9 +75,7 @@ export default function MyApp() {
       draw()
     }
 
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [])
 
   return (

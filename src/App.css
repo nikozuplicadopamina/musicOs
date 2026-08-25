@@ -60,6 +60,8 @@
   top: 0 !important;
   width: 100% !important;
   height: calc(100% - 30px) !important;
+  max-width: 100% !important;
+  max-height: calc(100% - 30px) !important;
 }
 
 .titlebar {

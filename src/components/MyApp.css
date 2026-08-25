@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: clamp(24px, 5vw, 48px) 16px;
-  background-color: #ffffff;
+  background-color: #faf8f4;
   color: #111111;
 }
 
@@ -44,10 +44,8 @@
 .my-app-content {
   width: min(720px, 100%);
   min-height: 200px;
-  background: #ffffff;
-  border: 2px solid;
-  border-color: #808080 #dfdfdf #dfdfdf #808080;
-  box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+  background: transparent;
+  border: 1px dashed #c0b8a8;
   padding: 18px;
   display: flex;
   flex-direction: column;

@@ -89,10 +89,42 @@ export default function MyApp() {
 
   return (
     <main className="pixel-page">
-      <div className="pixel-stack">
-        <canvas ref={canvasRef} role="img" aria-label={TEXT} className="pixel-title" />
-        <p className="my-app-subtitle">a music recommended page</p>
-        <div className="my-app-content">{/* escribe aqui tu contenido */}</div>
+      <div className="myapp-layout">
+        <div className="myapp-left">
+          <canvas ref={canvasRef} role="img" aria-label={TEXT} className="pixel-title" />
+          <p className="my-app-subtitle">a music recommended page</p>
+          <div className="my-app-desc">
+            <a className="negrilla">musicOs</a> es una plataforma hecha por mi para los que
+            quieran realmente escuchar lo ultimo en musica, estaré semanalmente (o tal vez no)
+            actualizando con albumes y/o sencillos de artistas variados!
+          </div>
+        </div>
+
+        <div className="myapp-right">
+          <div className="myapp-card">
+            <div className="myapp-card-text">
+              <h3 className="myapp-card-title">nombre1</h3>
+              <p className="myapp-card-desc">Descripcion corta de este album o artista.</p>
+            </div>
+            <div className="myapp-card-img">img</div>
+          </div>
+
+          <div className="myapp-card">
+            <div className="myapp-card-text">
+              <h3 className="myapp-card-title">nombre2</h3>
+              <p className="myapp-card-desc">Otra descripcion corta para este segundo item.</p>
+            </div>
+            <div className="myapp-card-img">img</div>
+          </div>
+
+          <div className="myapp-card">
+            <div className="myapp-card-text">
+              <h3 className="myapp-card-title">nombre3</h3>
+              <p className="myapp-card-desc">Y una ultima descripcion para completar la fila.</p>
+            </div>
+            <div className="myapp-card-img">img</div>
+          </div>
+        </div>
       </div>
     </main>
   )

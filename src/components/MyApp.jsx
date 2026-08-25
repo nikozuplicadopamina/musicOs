@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react'
 import './MyApp.css'
 
-const TEXT = 'MusicOs'
+const TEXT = 'musicOs'
 const SPLIT = 5
 const FONT_STACK = '"Times New Roman", Times, Tinos, serif'
 const FONT_WEIGHT = 700
-const RESOLUTION = 46
+const RESOLUTION = 56
 const SQUEEZE = 0.5
 const TRACKING = '-1px'
 const GRADIENT_MUSIC = ['#ffffff', '#b8b0a4']

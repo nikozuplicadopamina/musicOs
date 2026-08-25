@@ -1,25 +1,41 @@
-.my-app {
+.pixel-page {
+  --paper: #0c0d12;
+  --paper-grid: rgba(255, 255, 255, 0.045);
+
   height: 100%;
   overflow: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, var(--paper-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--paper-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #e8eaf0;
+}
+
+.pixel-stack {
+  display: flex;
+  width: 100%;
+  max-width: 60rem;
   flex-direction: column;
   align-items: center;
   gap: 22px;
-  padding: 48px 24px;
-  background: #ffffff;
-  color: #111111;
-  text-align: center;
 }
 
-.my-app-title {
-  font-family: 'Press Start 2P', 'Courier New', monospace;
-  font-size: clamp(26px, 6vw, 54px);
-  letter-spacing: 2px;
-  color: #000080;
-  text-shadow: 4px 4px 0 #1084d0;
+.pixel-title {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 .my-app-subtitle {
+  margin: 0;
   font-family: 'Press Start 2P', 'Courier New', monospace;
   font-size: clamp(8px, 1.6vw, 12px);
   letter-spacing: 4px;
@@ -42,4 +58,5 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  color: #111111;
 }

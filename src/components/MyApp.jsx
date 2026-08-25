@@ -11,7 +11,7 @@ const TRACKING = '-1px'
 const GRADIENT_MUSIC = ['#ffffff', '#b8b0a4']
 const GRADIENT_OS = ['#5b9bd5', '#1e4d8c']
 
-export default function MyApp() {
+export default function MyApp({ maximized }) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export default function MyApp() {
   }, [])
 
   return (
-    <main className="pixel-page">
+    <main className={`pixel-page${maximized ? ' maximized' : ''}`}>
       <div className="myapp-layout">
         <div className="myapp-left">
           <canvas ref={canvasRef} role="img" aria-label={TEXT} className="pixel-title" />

@@ -36,7 +36,7 @@ export default function Window({ win, app, minimized, focused, onFocus, onClose,
     </div>
   )
 
-  const body = <div className="window-body">{app.component}</div>
+  const body = <div className="window-body">{React.cloneElement(app.component, { maximized: win.maximized })}</div>
 
   if (win.maximized) {
     return (

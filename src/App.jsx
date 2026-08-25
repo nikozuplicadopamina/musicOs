@@ -12,8 +12,8 @@ const APPS = [
     id: 'myapp',
     title: 'MyApp',
     icon: icon,
-    width: 720,
-    height: 480,
+    width: 800,
+    height: 540,
     component: <MyApp />,
   },
   {

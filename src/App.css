@@ -51,6 +51,8 @@
   background: #c0c0c0;
   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080,
     inset 2px 2px #ffffff;
+  max-width: 96vw;
+  max-height: calc(100vh - 40px);
 }
 
 .window.maximized {

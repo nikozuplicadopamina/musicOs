@@ -3,6 +3,7 @@ import DesktopIcon from './components/DesktopIcon.jsx'
 import Window from './components/Window.jsx'
 import MyApp from './components/MyApp.jsx'
 import MyFolder from './components/MyFolder.jsx'
+import Welcome from './components/Welcome.jsx'
 import icon from './assets/icon.png'
 import folderIcon from './assets/folder.png'
 import './App.css'
@@ -10,15 +11,15 @@ import './App.css'
 const APPS = [
   {
     id: 'myapp',
-    title: 'MyApp',
+    title: 'musicOs',
     icon: icon,
     width: 800,
     height: 540,
     component: <MyApp />,
   },
   {
-    id: 'myfolder',
-    title: 'Mi carpeta',
+    id: 'portafolio',
+    title: 'Portafolio',
     icon: folderIcon,
     width: 520,
     height: 380,
@@ -148,6 +149,8 @@ export default function App() {
           />
         )
       })}
+
+      <Welcome />
 
       {startOpen && (
         <div className="start-menu">

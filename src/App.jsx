@@ -41,7 +41,7 @@ export default function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPatch(true), 6000)
-    const aboutTimer = setTimeout(() => setShowAbout(true), 6000)
+    const aboutTimer = setTimeout(() => setShowAbout(true), 8000)
     return () => {
       clearTimeout(timer)
       clearTimeout(aboutTimer)

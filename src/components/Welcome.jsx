@@ -1,22 +1,43 @@
 import { useState, useEffect } from 'react'
 
 export default function Welcome() {
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
+  const [hiding, setHiding] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(false), 5000)
-    return () => clearTimeout(timer)
+    const showTimer = setTimeout(() => setVisible(true), 6000)
+    return () => clearTimeout(showTimer)
   }, [])
+
+  useEffect(() => {
+    if (!visible) return
+    const hideTimer = setTimeout(() => {
+      setHiding(true)
+      setTimeout(() => setVisible(false), 500)
+    }, 12000)
+    return () => clearTimeout(hideTimer)
+  }, [visible])
 
   if (!visible) return null
 
   return (
-    <div className="welcome-notification" onClick={() => setVisible(false)}>
-      <div className="welcome-title">Bienvenido a musicOs</div>
-      <div className="welcome-desc">
-        Este es mi espacio personal de recomendaciones musicales.
-        <br />
-        Haz doble clic en el ícono de musicOs para empezar.
+    <div
+      className={`welcome-notification${hiding ? ' hiding' : ''}`}
+      onClick={() => {
+        setHiding(true)
+        setTimeout(() => setVisible(false), 500)
+      }}
+    >
+      <div className="welcome-icon">
+        <img src="/src/assets/icon_Os.png" alt="" />
+        <p>Notificación</p>
+      </div>
+      <div className="welcome-message">
+        <p>
+          Bienvenido a musicOs
+          <br />
+          <span>Espero que disfrutes explorando...</span>
+        </p>
       </div>
     </div>
   )

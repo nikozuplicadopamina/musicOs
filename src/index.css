@@ -1,7 +1,27 @@
+@font-face {
+  font-family: 'win95';
+  src: url('../src/assets/win95.ttf') format('truetype');
+}
+
+*,
+*::before,
+*::after {
+  font-family: 'win95', sans-serif;
+  box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+#root {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 html,
@@ -11,7 +31,7 @@ body,
 }
 
 body {
-  font-family: 'MS Sans Serif', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'win95', sans-serif;
   font-size: 12px;
   background: #008080;
   overflow: hidden;
@@ -24,6 +44,18 @@ img {
 }
 
 button {
-  font-family: inherit;
+  font-family: 'win95', sans-serif;
   cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  outline: 0;
 }

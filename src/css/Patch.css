@@ -3,102 +3,130 @@
   z-index: 8000;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  background: #c0c0c0;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px #808080, inset 2px 2px #ffffff;
+  width: 420px;
+  height: 475px;
+  min-height: 320px;
+  background: #c5c4c4;
+  border: 2px solid white;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  outline: 1px solid white;
+  overflow: hidden;
 }
 
-.patch-dragbar {
+.patch-folder .folder_dragbar {
   display: flex;
+  position: relative;
+  height: 24px;
+  width: 100%;
+  margin-bottom: 1px;
   align-items: center;
   justify-content: space-between;
-  height: 22px;
-  padding: 0 3px;
-  background: linear-gradient(90deg, #000080, #1084d0);
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-  cursor: move;
   user-select: none;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  cursor: move;
 }
 
 .patch-barname {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  margin-left: 5px;
+}
+
+.patch-barname span {
+  font-size: 15px;
+  color: white;
 }
 
 .patch-barbtn {
   display: flex;
+  margin-right: 4px;
   gap: 2px;
 }
 
-.patch-btn-minimize,
-.patch-btn-close {
-  width: 18px;
-  height: 16px;
-  padding: 0;
-  background: #c0c0c0;
-  border: none;
-  cursor: pointer;
-  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+.patch-barbtn div {
+  width: 17px;
+  height: 17px;
+  background: #c9c9c9;
+  font-weight: bold;
+  border: 1px solid black;
+  border-top-color: rgb(198, 198, 198);
+  border-left-color: rgb(198, 198, 198);
+  box-shadow: inset 1px 1px #ffffff, 1px 1px #000000dd;
+  cursor: default;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.patch-btn-minimize:active,
-.patch-btn-close:active {
-  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+.patch-barbtn div:active {
+  border-top-color: black;
+  border-left-color: black;
+  border-bottom-color: white;
+  border-right-color: white;
 }
 
-.patch-dash {
-  display: block;
+.patch-barbtn .x {
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  top: -3px;
+}
+
+.patch-barbtn .dash {
   width: 8px;
-  height: 2px;
-  background: #000;
-}
-
-.patch-btn-close {
-  font-size: 12px;
-  font-weight: bold;
-  margin-left: 2px;
+  border-bottom: 2px solid black;
 }
 
 .patch-content {
-  flex: 1;
-  overflow: auto;
-  margin: 2px;
-  background: #ffffff;
+  position: relative;
+  width: 98%;
+  height: 95%;
+  left: 50%;
+  margin-top: 4px;
+  border: 1px solid black;
+  border-right-color: white;
+  border-bottom-color: white;
+  transform: translate(-50%);
+  background: #f9f9ead8;
+  padding: 2px;
 }
 
 .patch-note {
-  padding: 10px;
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 12px;
+  padding-right: 8px;
+  padding-top: 0px;
+  font-size: 14px;
 }
 
 .patch-head {
   display: flex;
+  position: relative;
   align-items: center;
-  gap: 8px;
-  margin: 0 0 10px;
+  height: 40px;
+  margin-left: -1.1rem;
 }
 
 .patch-head img {
-  width: 20px;
-  height: 20px;
+  position: relative;
+  width: 42px;
 }
 
 .patch-head h1 {
-  margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #000000;
+  position: relative;
+  font-size: 16px;
+  left: -6px;
+  top: 2px;
 }
 
 .patch-log {
-  max-height: 180px;
-  overflow-y: auto;
+  font-size: 13px;
+  color: black;
+  white-space: pre-wrap;
 }
 
 .patch-entry {
@@ -107,15 +135,13 @@
 
 .patch-entry-head {
   margin: 0 0 2px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  color: #000080;
+  font-size: 13px;
+  color: black;
 }
 
 .patch-entry-note {
   margin: 0;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.4;
-  color: #333333;
+  color: black;
 }

@@ -4,6 +4,7 @@ import Window from './components/Window.jsx'
 import MyApp from './components/MyApp.jsx'
 import MyFolder from './components/MyFolder.jsx'
 import Patch from './components/Patch.jsx'
+import About from './components/About.jsx'
 import icon from './assets/icon.png'
 import iconOs from './assets/icon_Os.png'
 import folderIcon from './assets/folder.png'
@@ -34,12 +35,17 @@ export default function App() {
   const [selectedIcon, setSelectedIcon] = useState(null)
   const [startOpen, setStartOpen] = useState(false)
   const [showPatch, setShowPatch] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
   const [clock, setClock] = useState('')
   const zCounter = useRef(10)
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPatch(true), 6000)
-    return () => clearTimeout(timer)
+    const aboutTimer = setTimeout(() => setShowAbout(true), 6000)
+    return () => {
+      clearTimeout(timer)
+      clearTimeout(aboutTimer)
+    }
   }, [])
 
   useEffect(() => {
@@ -159,6 +165,7 @@ export default function App() {
       })}
 
       {showPatch && <Patch onClose={() => setShowPatch(false)} />}
+      {showAbout && <About onClose={() => setShowAbout(false)} />}
 
       {startOpen && (
         <div className="start-menu">

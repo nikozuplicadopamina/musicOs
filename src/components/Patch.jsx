@@ -12,20 +12,18 @@ export default function Patch({ onClose }) {
 
   return (
     <Draggable
-      handle=".patch-dragbar"
+      handle=".folder_dragbar"
       bounds="parent"
       defaultPosition={{ x: 80, y: 90 }}
     >
       <div className="patch-folder">
-        <div className="patch-dragbar">
+        <div className="folder_dragbar">
           <div className="patch-barname">
             <span>Patch</span>
           </div>
           <div className="patch-barbtn">
-            <button type="button" className="patch-btn-minimize">
-              <span className="patch-dash"></span>
-            </button>
-            <button type="button" className="patch-btn-close" onClick={onClose}>×</button>
+            <div className="dash"></div>
+            <div className="x" onClick={onClose}>×</div>
           </div>
         </div>
 

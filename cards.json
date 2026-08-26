@@ -1,0 +1,17 @@
+[
+  {
+    "title": "nombre1",
+    "artist": "artista(s)",
+    "desc": "Descripcion corta de este album o artista."
+  },
+  {
+    "title": "nombre2",
+    "artist": "artista(s)",
+    "desc": "Otra descripcion corta para este segundo item."
+  },
+  {
+    "title": "nombre3",
+    "artist": "artista(s)",
+    "desc": "Y una ultima descripcion para completar la fila."
+  }
+]

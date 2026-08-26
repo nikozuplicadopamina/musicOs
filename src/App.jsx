@@ -5,6 +5,7 @@ import MyApp from './components/MyApp.jsx'
 import MyFolder from './components/MyFolder.jsx'
 import Welcome from './components/Welcome.jsx'
 import icon from './assets/icon.png'
+import iconOs from './assets/icon_Os.png'
 import folderIcon from './assets/folder.png'
 import './App.css'
 
@@ -12,7 +13,8 @@ const APPS = [
   {
     id: 'myapp',
     title: 'musicOs',
-    icon: icon,
+    icon: iconOs,
+    taskbarIcon: icon,
     width: 800,
     height: 540,
     component: <MyApp />,
@@ -190,7 +192,7 @@ export default function App() {
               className={`tb-button${focusedId === win.id && !win.minimized ? ' active' : ''}`}
               onClick={() => handleTaskbarClick(win)}
             >
-              <img src={app.icon} alt="" />
+              <img src={app.taskbarIcon || app.icon} alt="" />
               {app.title}
             </button>
           )

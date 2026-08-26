@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './MyApp.css'
 
 const TEXT = 'musicOs'
@@ -13,6 +13,14 @@ const GRADIENT_OS = ['#5b9bd5', '#1e4d8c']
 
 export default function MyApp({ maximized }) {
   const canvasRef = useRef(null)
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    fetch(import.meta.env.BASE_URL + 'cards.json')
+      .then(r => r.json())
+      .then(setCards)
+      .catch(() => setCards([]))
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -101,32 +109,16 @@ export default function MyApp({ maximized }) {
         </div>
 
         <div className="myapp-right">
-          <div className="myapp-card">
-            <div className="myapp-card-img">img</div>
-            <div className="myapp-card-text">
-              <h3 className="myapp-card-title">nombre1</h3>
-              <p className="myapp-card-artist">artista(s)</p>
-              <p className="myapp-card-desc">Descripcion corta de este album o artista.</p>
+          {cards.map((card, i) => (
+            <div className="myapp-card" key={i}>
+              <div className="myapp-card-img">img</div>
+              <div className="myapp-card-text">
+                <h3 className="myapp-card-title">{card.title}</h3>
+                <p className="myapp-card-artist">{card.artist}</p>
+                <p className="myapp-card-desc">{card.desc}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="myapp-card">
-            <div className="myapp-card-img">img</div>
-            <div className="myapp-card-text">
-              <h3 className="myapp-card-title">nombre2</h3>
-              <p className="myapp-card-artist">artista(s)</p>
-              <p className="myapp-card-desc">Otra descripcion corta para este segundo item.</p>
-            </div>
-          </div>
-
-          <div className="myapp-card">
-            <div className="myapp-card-img">img</div>
-            <div className="myapp-card-text">
-              <h3 className="myapp-card-title">nombre3</h3>
-              <p className="myapp-card-artist">artista(s)</p>
-              <p className="myapp-card-desc">Y una ultima descripcion para completar la fila.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </main>

@@ -28,6 +28,14 @@ const APPS = [
     height: 380,
     component: <MyFolder />,
   },
+  {
+    id: 'about',
+    title: 'About',
+    icon: iconOs,
+    width: 420,
+    height: 475,
+    component: <About />,
+  },
 ]
 
 export default function App() {
@@ -35,17 +43,12 @@ export default function App() {
   const [selectedIcon, setSelectedIcon] = useState(null)
   const [startOpen, setStartOpen] = useState(false)
   const [showPatch, setShowPatch] = useState(false)
-  const [showAbout, setShowAbout] = useState(false)
   const [clock, setClock] = useState('')
   const zCounter = useRef(10)
 
   useEffect(() => {
     const timer = setTimeout(() => setShowPatch(true), 6000)
-    const aboutTimer = setTimeout(() => setShowAbout(true), 8000)
-    return () => {
-      clearTimeout(timer)
-      clearTimeout(aboutTimer)
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   useEffect(() => {
@@ -165,7 +168,6 @@ export default function App() {
       })}
 
       {showPatch && <Patch onClose={() => setShowPatch(false)} />}
-      {showAbout && <About onClose={() => setShowAbout(false)} />}
 
       {startOpen && (
         <div className="start-menu">

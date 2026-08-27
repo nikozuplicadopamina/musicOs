@@ -11,14 +11,17 @@ export default function Patch() {
         </div>
         <div className="patch-log">
           <div className="patch-entry">
-            <p className="patch-entry-head"><strong>Sistema</strong> — 2026-08-26</p>
             <p className='patch-entry-head'></p>
-            <p className='patch-entry-head'><strong>MusicOs Al Aire</strong></p>
             <p className='patch-entry-head'>Este es un proyecto/portafoleo donde documento todo lo relacionado con mis proyectos y mis habilidades en lo que eventualmente me especializo, para mucha más información abre <strong>About</strong></p>
+            <p className='patch-entry-head'></p>
             <p className='patch-entry-head'>____________________________________________</p>
+            <p className="patch-entry-head"><strong>Sistema</strong> — 2026-08-26</p>
+            <p className='patch-entry-head'> </p>
+            <p className='patch-entry-head'><strong>MusicOs Al Aire</strong></p>
+            <p className='patch-entry-head'></p>
             <p className="patch-entry-note">- Versión inicial de musicOs</p>
             <p className="patch-entry-note">- Escritorio estilo Windows 95</p>
-            <p className="patch-entry-note">- App principal con tarjetas de música</p>
+            <p className="patch-entry-note">- Creación de iconos iniciales</p>
           </div>
         </div>
       </div>

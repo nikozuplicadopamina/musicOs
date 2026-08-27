@@ -9,6 +9,7 @@ import icon from './assets/icon.png'
 import iconOs from './assets/icon_Os.png'
 import aboutIcon from './assets/ipng.png'
 import folderIcon from './assets/folder.png'
+import bulbIcon from './assets/bulb.png'
 import './App.css'
 
 const APPS = [
@@ -37,18 +38,26 @@ const APPS = [
     height: 475,
     component: <About />,
   },
+  {
+    id: 'patch',
+    title: 'Patch',
+    icon: bulbIcon,
+    width: 420,
+    height: 475,
+    component: <Patch />,
+  },
 ]
 
 export default function App() {
   const [windows, setWindows] = useState([])
   const [selectedIcon, setSelectedIcon] = useState(null)
   const [startOpen, setStartOpen] = useState(false)
-  const [showPatch, setShowPatch] = useState(false)
   const [clock, setClock] = useState('')
   const zCounter = useRef(10)
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowPatch(true), 6000)
+    const patchApp = APPS.find((a) => a.id === 'patch')
+    const timer = setTimeout(() => openApp(patchApp), 6000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -167,8 +176,6 @@ export default function App() {
           />
         )
       })}
-
-      {showPatch && <Patch onClose={() => setShowPatch(false)} />}
 
       {startOpen && (
         <div className="start-menu">

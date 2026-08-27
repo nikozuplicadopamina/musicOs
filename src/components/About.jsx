@@ -13,31 +13,25 @@ export default function About() {
         >General</p>
         <p
           className={activeTab === 'music' ? 'active' : ''}
-          onClick={() => setActiveTab('music')}
+          onClick={() => setActiveTab('musicOs')}
         >Music</p>
       </div>
 
       <div className="about-content">
         <div className="about-content-inner">
-          {activeTab === 'general' ? (
+          {activeTab === 'About Me' ? (
             <div className="about-general">
               <p className="about-text">
-                <strong>musicOs</strong> es una plataforma hecha por mí para los que
-                quieran realmente escuchar lo último en música.
+                Soy <strong>Nicolás</strong>, un programador principiante, me especializo en <strong>HTML, CSS, JS (javascript & java) ensamblador, python y actualmente estoy trabajando en mi videojuego sin nombre aún</strong>
                 <br /><br />
-                Estaré semanalmente actualizando con álbumes y/o sencillos
-                de artistas variados.
+              esta web es para poner un portafolio y un mini proyecto sobre música para tener en mi perfil de instagram e otras redes sociales
               </p>
             </div>
           ) : (
             <div className="about-music">
-              <p className="about-text">
-                Cada semana encontrarás nuevas recomendaciones musicales.
-                <br /><br />
-                Álbumes, sencillos, EPs de diferentes géneros y artistas.
-                <br /><br />
-                Si tienes alguna sugerencia, ¡házmelo saber!
-              </p>
+                <p className="about-text">
+                  se estará actualizando semanalmente (o posiblemente no) con álbumes y/o sencillos de artistas variados, respecto a la app, esta se estará actualizando a medida que esta web tambien lo hace.
+                </p>
             </div>
           )}
         </div>

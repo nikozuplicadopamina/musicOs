@@ -7,6 +7,7 @@ import Patch from './components/Patch.jsx'
 import About from './components/About.jsx'
 import icon from './assets/icon.png'
 import iconOs from './assets/icon_Os.png'
+import aboutIcon from './assets/ipng.png'
 import folderIcon from './assets/folder.png'
 import './App.css'
 
@@ -31,7 +32,7 @@ const APPS = [
   {
     id: 'about',
     title: 'About',
-    icon: iconOs,
+    icon: aboutIcon,
     width: 420,
     height: 475,
     component: <About />,

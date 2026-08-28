@@ -64,3 +64,22 @@
   font-size: 14px;
   line-height: 1.5;
 }
+
+.about-tab-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  height: 100%;
+}
+
+.about-tab-content .about-img {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.about-text-container {
+  flex: 1;
+  min-width: 0;
+}

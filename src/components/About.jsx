@@ -22,7 +22,7 @@ export default function About() {
           {activeTab === 'general' && (
             <div className="about-general">
               <p className="about-text">
-                Soy <strong>Nicolás</strong>, un programador principiante, me especializo en <strong>HTML, CSS, JS (javascript & java) ensamblador, python y actualmente estoy trabajando en mi videojuego sin nombre aún</strong>
+                Soy <strong>Nicolás</strong>, un programador principiante, me especializo en <strong>HTML, CSS, JS (javascript & java) ensamblador, python</strong> y actualmente estoy trabajando en mi videojuego sin nombre aún
                 <br /><br />
                 esta web es para poner un portafolio y un mini proyecto sobre música para tener en mi perfil de instagram e otras redes sociales
               </p>
@@ -31,7 +31,9 @@ export default function About() {
           {activeTab === 'music' && (
             <div className="about-music">
               <p className="about-text">
-                se estará actualizando semanalmente (o posiblemente no) con álbumes y/o sencillos de artistas variados, respecto a la app, esta se estará actualizando a medida que esta web tambien lo hace.
+                <strong>MusicOs</strong>
+                <br /><br/>
+                se estará actualizando semanalmente (o posiblemente no) con álbumes y/o sencillos de artistas variados de los que yo ya haya escuchado, respecto a la app, esta se estará actualizando a medida que esta web tambien lo hace.
               </p>
             </div>
           )}

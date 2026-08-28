@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import bioPC from '../assets/bio_pc.png'
-import winampIcon from '../assets/winampIcon.png'
+import iconmusic from '../assets/iconmusic.png'
 import '../css/About.css'
 
 export default function About() {
@@ -35,7 +35,7 @@ export default function About() {
           )}
           {activeTab === 'music' && (
             <div className="about-tab-content">
-              <img src={winampIcon} alt="Music" className="about-img" />
+              <img src={iconmusic} alt="Music" className="about-img" />
               <div className="about-text-container">
                 <p className="about-text">
                   <strong>MusicOs</strong>

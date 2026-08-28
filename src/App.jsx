@@ -6,7 +6,7 @@ import MyFolder from './components/MyFolder.jsx'
 import Patch from './components/Patch.jsx'
 import About from './components/About.jsx'
 import icon from './assets/icon.png'
-import iconOs from './assets/icon_Os.png'
+import iconmusic from './assets/iconmusic.png'
 import aboutIcon from './assets/ipng.png'
 import folderIcon from './assets/folder.png'
 import bulbIcon from './assets/bulb.png'
@@ -16,7 +16,7 @@ const APPS = [
   {
     id: 'myapp',
     title: 'musicOs',
-    icon: iconOs,
+    icon: iconmusic,
     taskbarIcon: icon,
     width: 800,
     height: 540,
